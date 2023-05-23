@@ -1,6 +1,5 @@
-# Trabalho 1 - Grupo 6 - API Restfull 
-- Primeira Atividade em grupo da disciplina API Restfull da residência em TIC do Serratec
-
+# Trabalho 2 - Grupo 6 - API Restfull 
+- Adição de segurança, validação e envio de e-mail no trabalho 1.
 # Integrantes:
 - [LUIS FELIPE HAMMES DE MELLO CAMPOS](https://github.com/lf-hammes)
 - [MARIANE DOS SANTOS MAGALHÃES](https://github.com/MarianeSMagalhaes)
