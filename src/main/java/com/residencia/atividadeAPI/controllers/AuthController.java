@@ -1,11 +1,14 @@
 package com.residencia.atividadeAPI.controllers;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +26,7 @@ import com.residencia.atividadeAPI.dto.JwtResponseDTO;
 import com.residencia.atividadeAPI.dto.LoginRequestDTO;
 import com.residencia.atividadeAPI.dto.MessageResponseDTO;
 import com.residencia.atividadeAPI.dto.SignupRequestDTO;
+import com.residencia.atividadeAPI.dto.UserResumidoDTO;
 import com.residencia.atividadeAPI.entities.Role;
 import com.residencia.atividadeAPI.entities.RoleEnum;
 import com.residencia.atividadeAPI.entities.User;
@@ -50,6 +55,9 @@ public class AuthController {
 
 	@Autowired
 	JwtUtils jwtUtils;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequestDTO loginRequest) {
@@ -98,7 +106,7 @@ public class AuthController {
 					roles.add(adminRole);
 
 					break;
-				case "mod":
+				case "moderator":
 					Role modRole = roleRepository.findByName(RoleEnum.ROLE_MODERATOR)
 							.orElseThrow(() -> new RuntimeException("Erro: Role não encontrada."));
 					roles.add(modRole);
@@ -117,4 +125,20 @@ public class AuthController {
 
 		return ResponseEntity.ok(new MessageResponseDTO("Usuário registrado com sucesso!"));
 	}
+	@GetMapping	("/users")
+	public ResponseEntity<List<UserResumidoDTO>>  getAllUsersResumidoDTO(){
+		
+		List<User> users = userRepository.findAll();
+		List<UserResumidoDTO> listaUserResumidoDTO = new ArrayList<>();
+		
+		for (User user : users) {
+			
+			UserResumidoDTO userResumidoDto = modelMapper.map(user, UserResumidoDTO.class);
+			listaUserResumidoDTO.add(userResumidoDto);
+		}
+		
+		return new ResponseEntity<>(listaUserResumidoDTO,
+				HttpStatus.OK);
+	}
+	
 }
