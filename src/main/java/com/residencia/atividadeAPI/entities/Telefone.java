@@ -12,7 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
 
 @JsonIdentityInfo(
 		scope = Telefone.class,
@@ -28,9 +28,10 @@ public class Telefone {
 	@Column (name = "id")
 	private Long idTelefone;
 	
-	@NotBlank	
+	@NotBlank
+	@Pattern(regexp = "^[0-9]{11,11}")
 	@Column (name = "numero")
-	private Integer numero;	
+	private String numero;	
 	
 	@OneToOne
 	@JoinColumn (name = "id_instrutor" , referencedColumnName = "id", unique=true)
@@ -44,11 +45,11 @@ public class Telefone {
 		this.idTelefone = idTelefone;
 	}
 
-	public Integer getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 

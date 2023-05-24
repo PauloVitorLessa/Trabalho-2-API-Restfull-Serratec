@@ -29,12 +29,12 @@ public class Turma {
 	private Long idTurma;
 	
 	@NotBlank
-	@Size(max = 20)
+	@Size(min = 3, max = 20)
 	@Column (name = "nome_disciplina")
 	private String nome_disciplina;
 	
 	@NotBlank
-	@Size(max = 20)
+	@Size(min = 3,max = 20)
 	@Column (name = "dia_semana")
 	private String dia_semana;
 	

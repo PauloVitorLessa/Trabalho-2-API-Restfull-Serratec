@@ -1,0 +1,882 @@
+{
+	"info": {
+		"_postman_id": "50a8f526-920f-4ee3-a9d7-44842464c0d2",
+		"name": "atividadeAPIsecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27353138",
+		"_collection_link": "https://www.postman.com/mission-physicist-33650065/workspace/api-serratec/collection/27353138-50a8f526-920f-4ee3-a9d7-44842464c0d2?action=share&creator=27353138&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Instrutor",
+			"item": [
+				{
+					"name": "GET All Instrutores",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/instrutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"instrutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Instrutor By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/instrutores/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"instrutores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE Instrutor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rg\": \"222222222\",\r\n    \"nome\":\"Yago\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/instrutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"instrutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Instrutor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idInstrutor\": 1,\r\n    \"rg\": \"222222222\",\r\n    \"nome\": \"Mariane\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/instrutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"instrutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Instrutor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/instrutores/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"instrutores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Turma",
+			"item": [
+				{
+					"name": "GET All Turmas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ4NzEzMzMsImV4cCI6MTY4NDk1NzczM30.Tmp-RohihkLwrrVqJ29dIO9vq3CI2n9nFvsOw2JQZss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/turmas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"turmas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Turma By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/turmas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"turmas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Turma",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTurma\": 1,\r\n    \"nome_disciplina\": \"Front End\",\r\n    \"dia_semana\": \"Quarta-feira\",\r\n    \"instrutor\": {\r\n        \"idInstrutor\": 1\r\n    }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/turmas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"turmas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Turma",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/turmas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"turmas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE Turma",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjg0ODg0NzI1LCJleHAiOjE2ODQ5NzExMjV9.EmOIKwl4d7PDGl2SQd_r5Ak1XcbFfKi7JED6hh1juO8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dia_semana\": \"sábado\",\r\n    \"nome_disciplina\": \"Inglês\",\r\n    \"instrutor\":{\r\n        \"idInstrutor\": 1\r\n    }\r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/turmas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"turmas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Telefone",
+			"item": [
+				{
+					"name": "GET All Telefones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Telefone By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/telefones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"telefones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Telefone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTelefone\": 1,\r\n    \"numero\": 22222222222,\r\n    \"instrutor\": {\r\n        \"idInstrutor\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Telefone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE2ODQ5NDk5NDQsImV4cCI6MTY4NTAzNjM0NH0.8jf71eHL20adHTCgtYVThr74OqGxnhz-jwosVdc0gdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/telefones/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"telefones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE Telefone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjg0ODg0NzI1LCJleHAiOjE2ODQ5NzExMjV9.EmOIKwl4d7PDGl2SQd_r5Ak1XcbFfKi7JED6hh1juO8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero\": \"11111111111\",\r\n    \"instrutor\":{\r\n        \"idInstrutor\": 1\r\n    }\r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/telefones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"telefones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "ROLE_USER Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"ROLE_USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROLE_MODERATOR Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"ROLE_MODERATOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ROLE_ADMIN Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"ROLE_ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Signin",
+			"item": [
+				{
+					"name": "Signin Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\" : \"user\",\r\n\t\"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin Moderador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\" : \"moderator\",\r\n\t\"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin Administrador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\" : \"administrator\",\r\n\t\"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Signup",
+			"item": [
+				{
+					"name": "Signup Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\" : \"administrator\",\r\n\t\"email\": \"admin@mail.com\",\r\n\t\"password\": \"12345678\",\r\n\t\"role\": [\"admin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup Moderator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\" : \"moderator\",\r\n\t\"email\": \"mod@mail.com\",\r\n\t\"password\": \"12345678\",\r\n\t\"role\": [\"moderator\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\" : \"user\",\r\n\t\"email\": \"user@mail.com\",\r\n\t\"password\": \"12345678\",\r\n\t\"role\": [\"user\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GET All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjg0OTUwODgyLCJleHAiOjE2ODUwMzcyODJ9.YCooOpCb5JA_D_ryb4X0njUekP3I_1J3a9AIpF1RzXU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/auth/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjg0ODg4ODc4LCJleHAiOjE2ODQ5NzUyNzh9.P8Pn0UuXkaJo41jDM0IeXH_Z_QZHxi-POvvtO16rhVg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/swagger-ui.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"swagger-ui.html"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
