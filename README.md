@@ -1,5 +1,5 @@
 # Trabalho 2 - Grupo 6 - API Restfull 
-- Adição de segurança, validação e envio de e-mail no trabalho 1.
+- Adição do Spring security, validação de dados e envio de e-mail nos métodos save do trabalho 1.
 # Integrantes:
 - [LUIS FELIPE HAMMES DE MELLO CAMPOS](https://github.com/lf-hammes)
 - [MARIANE DOS SANTOS MAGALHÃES](https://github.com/MarianeSMagalhaes)
