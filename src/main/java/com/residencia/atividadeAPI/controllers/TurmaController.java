@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.residencia.atividadeAPI.entities.Turma;
 import com.residencia.atividadeAPI.services.TurmaService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/turmas")
 public class TurmaController {
@@ -42,14 +44,14 @@ public class TurmaController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Turma> saveTurma(@RequestBody Turma turma) {
+	public ResponseEntity<Turma> saveTurma(@Valid @RequestBody Turma turma) {
 		
 		return new ResponseEntity<>(turmaService.saveTurma(turma),
 				HttpStatus.CREATED);
 	}
 	
 	@PutMapping
-	public ResponseEntity<Turma> updateTurma(@RequestBody Turma turma) {
+	public ResponseEntity<Turma> updateTurma(@Valid @RequestBody Turma turma) {
 		
 		if(turmaService.getTurmaById(turma.getIdTurma()) != null) {
 			return new ResponseEntity<> (turmaService.updateTurma(turma),

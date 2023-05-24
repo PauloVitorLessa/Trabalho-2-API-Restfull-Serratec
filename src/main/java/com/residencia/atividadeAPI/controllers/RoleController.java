@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.residencia.atividadeAPI.entities.Role;
 import com.residencia.atividadeAPI.security.service.RoleService;
 
+import jakarta.validation.Valid;
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/roles")
@@ -20,7 +22,7 @@ public class RoleController {
 	RoleService roleService;
 	
 	@PostMapping
-	public ResponseEntity<Role> save(@RequestBody Role role) {
+	public ResponseEntity<Role> save(@Valid @RequestBody Role role) {
 		Role newRole = roleService.save(role);
 		if(newRole != null)
 			return new ResponseEntity<>(newRole, HttpStatus.CREATED);

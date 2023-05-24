@@ -14,6 +14,9 @@ public class TurmaService {
 	@Autowired
 	TurmaRepository turmaRepository;
 	
+	@Autowired
+	EmailService emailService;
+	
 	public List <Turma>getAllTurmaes() {
 		
 		return turmaRepository.findAll();
@@ -26,7 +29,9 @@ public class TurmaService {
 	
 	public Turma saveTurma(Turma turma) {
 		
-		return turmaRepository.save(turma);
+		Turma turmaResponse = turmaRepository.save(turma);
+		emailService.enviarEmail("paulo.vitor.lessa@gmail.com", "turma cadastrado", turmaResponse.toString());
+		return turmaResponse;		
 	}
 	
 	public Turma updateTurma(Turma turma) {

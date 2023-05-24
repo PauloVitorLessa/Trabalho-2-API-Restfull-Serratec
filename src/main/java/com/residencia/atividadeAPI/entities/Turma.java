@@ -11,6 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @JsonIdentityInfo(
 		scope = Turma.class,
@@ -26,9 +28,13 @@ public class Turma {
 	@Column (name = "id")
 	private Long idTurma;
 	
+	@NotBlank
+	@Size(max = 20)
 	@Column (name = "nome_disciplina")
 	private String nome_disciplina;
 	
+	@NotBlank
+	@Size(max = 20)
 	@Column (name = "dia_semana")
 	private String dia_semana;
 	
@@ -68,8 +74,10 @@ public class Turma {
 		this.instrutor = instrutor;
 	}
 
-	
-
-	
+	@Override
+	public String toString() {
+		return "Turma [idTurma=" + idTurma + ", nome_disciplina=" + nome_disciplina + ", dia_semana=" + dia_semana
+				+ ", instrutor=" + instrutor + "]";
+	}
 	
 }

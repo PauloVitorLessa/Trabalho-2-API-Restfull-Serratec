@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.residencia.atividadeAPI.entities.Telefone;
 import com.residencia.atividadeAPI.services.TelefoneService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/telefones")
 public class TelefoneController {
@@ -42,7 +44,7 @@ public class TelefoneController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Telefone> saveTelefone(@RequestBody Telefone telefone) {
+	public ResponseEntity<Telefone> saveTelefone(@Valid @RequestBody Telefone telefone) {
 		
 		if(telefoneService.saveTelefone(telefone) != null) {
 			return new ResponseEntity<>(telefoneService.saveTelefone(telefone),
@@ -56,7 +58,7 @@ public class TelefoneController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Telefone> updateTelefone(@RequestBody Telefone telefone) {
+	public ResponseEntity<Telefone> updateTelefone(@Valid @RequestBody Telefone telefone) {
 		
 		if(telefoneService.getTelefoneById(telefone.getIdTelefone()) != null) {
 			return new ResponseEntity<> (telefoneService.updateTelefone(telefone),

@@ -14,6 +14,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @JsonIdentityInfo(
 		scope = Instrutor.class,
@@ -29,9 +31,12 @@ public class Instrutor {
 		@Column (name = "id")
 		private Long idInstrutor;
 		
+		@NotBlank		
 		@Column (name = "rg")
 		private Integer rg;
 		
+		@NotBlank
+		@Size(max = 20)
 		@Column (name = "nome")
 		private String nome;
 		
@@ -79,6 +84,12 @@ public class Instrutor {
 
 		public void setTurmas(List<Turma> turmas) {
 			this.turmas = turmas;
+		}
+
+		@Override
+		public String toString() {
+			return "Instrutor [idInstrutor=" + idInstrutor + ", rg=" + rg + ", nome=" + nome + ", telefone=" + telefone
+					+ ", turmas=" + turmas + "]";
 		}
 
 		

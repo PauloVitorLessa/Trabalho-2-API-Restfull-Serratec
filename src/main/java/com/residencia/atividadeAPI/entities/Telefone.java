@@ -11,6 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @JsonIdentityInfo(
 		scope = Telefone.class,
@@ -26,6 +28,7 @@ public class Telefone {
 	@Column (name = "id")
 	private Long idTelefone;
 	
+	@NotBlank	
 	@Column (name = "numero")
 	private Integer numero;	
 	
@@ -56,6 +59,12 @@ public class Telefone {
 	public void setInstrutor(Instrutor instrutor) {
 		this.instrutor = instrutor;
 	}
+
+	@Override
+	public String toString() {
+		return "Telefone [idTelefone=" + idTelefone + ", numero=" + numero + ", instrutor=" + instrutor + "]";
+	}
+	
 
 	
 }

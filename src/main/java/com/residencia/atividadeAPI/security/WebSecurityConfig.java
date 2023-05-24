@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -41,7 +42,7 @@ public class WebSecurityConfig {
             .exceptionHandling(handling -> handling.authenticationEntryPoint(unauthorizedHandler)) //configura a classe para tratamento da excecao de autenticacao
             .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) //define a politica de sessao
             .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/swagger-ui/**","/swagger-resources/**", "/v3/api-docs/**", "/actuator/**","/auth/signin", "/auth/signup", "/roles/**").permitAll() //define as rotas publicas/abertas
+                    .requestMatchers("/swagger-ui/**","/v3/api-docs/**","/actuator/**","/auth/signin","/auth/signup","/roles/**").permitAll() //define as rotas publicas/abertas
                     .requestMatchers("/auth/users").hasRole("ADMIN") // autoriza o acesso a rotas por perfil
                     .requestMatchers("/instrutores/**", "/telefones/**").hasAnyRole("MODERATOR", "ADMIN") //autoriza o acesso a rotas por perfis
                     .requestMatchers("/turmas/**").hasAnyRole("USER", "MODERATOR", "ADMIN") //autoriza o acesso a rotas por perfis
@@ -87,5 +88,5 @@ public class WebSecurityConfig {
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-	}
+	}    
 }

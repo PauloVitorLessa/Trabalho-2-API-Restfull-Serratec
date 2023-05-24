@@ -14,6 +14,9 @@ public class TelefoneService {
 	@Autowired
 	TelefoneRepository telefoneRepository;
 	
+	@Autowired
+	EmailService emailService;
+	
 	public List <Telefone>getAllTelefones() {
 		
 		return telefoneRepository.findAll();
@@ -33,7 +36,10 @@ public class TelefoneService {
             }
         }
         if(verificaInstrutor) {
-            return telefoneRepository.save(telefone);
+        	Telefone  telefoneResponse = telefoneRepository.save(telefone);
+			emailService.enviarEmail("paulo.vitor.lessa@gmail.com", "telefone cadastrado", telefoneResponse.toString());
+			return telefoneResponse;	
+            
         }else {
             return null;
         }		

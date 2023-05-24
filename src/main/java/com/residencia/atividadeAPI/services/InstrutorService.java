@@ -14,6 +14,9 @@ public class InstrutorService {
 	@Autowired
 	InstrutorRepository instrutorRepository;
 	
+	@Autowired
+	EmailService emailService;
+	
 	public List <Instrutor>getAllInstrutores() {
 		
 		return instrutorRepository.findAll();
@@ -24,9 +27,11 @@ public class InstrutorService {
 		return instrutorRepository.findById(id).orElse(null);	
 	}
 	
-	public Instrutor saveInstrutor(Instrutor instrutor) {
-		
-		return instrutorRepository.save(instrutor);
+	public Instrutor saveInstrutor(Instrutor instrutor) {	
+			
+			Instrutor  instrutorResponse = instrutorRepository.save(instrutor);
+			emailService.enviarEmail("paulo.vitor.lessa@gmail.com", "instrutor cadastrado", instrutorResponse.toString());
+			return instrutorResponse;		
 	}
 	
 	public Instrutor updateInstrutor(Instrutor instrutor) {
